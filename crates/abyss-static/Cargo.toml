@@ -1,0 +1,12 @@
+[package]
+name = "abyss-static"
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+abyss-core.workspace = true
+dragon.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true

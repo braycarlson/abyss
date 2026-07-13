@@ -1,0 +1,12 @@
+[package]
+name = "abyss-core"
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+rift.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,61 @@
+[workspace]
+members = [
+    "crates/abyss-core",
+    "crates/abyss-static",
+    "crates/abyss-store",
+    "crates/abyss-collect",
+    "crates/abyss-aggregate",
+    "crates/abyss-api",
+    "crates/abyss-serve",
+    "crates/abyss",
+]
+resolver = "3"
+
+[workspace.package]
+edition = "2024"
+version = "0.1.0"
+
+[workspace.dependencies]
+abyss-aggregate = { path = "crates/abyss-aggregate" }
+abyss-api = { path = "crates/abyss-api" }
+abyss-collect = { path = "crates/abyss-collect" }
+abyss-core = { path = "crates/abyss-core" }
+abyss-static = { path = "crates/abyss-static" }
+abyss-store = { path = "crates/abyss-store" }
+anyhow = "1.0.103"
+axum = "0.8"
+dotenvy = "0.15.7"
+reqwest = "0.13.4"
+dragon = { path = "../rift/crates/dragon" }
+rift = { path = "../rift/crates/rift", features = ["tracing"] }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.150"
+sqlx = { version = "0.9", default-features = false, features = ["runtime-tokio", "postgres", "migrate", "macros"] }
+thiserror = "2.0.18"
+tokio = { version = "1.52.3", features = ["fs", "macros", "net", "rt-multi-thread", "signal", "sync", "time"] }
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
+
+[workspace.lints.rust]
+warnings = "deny"
+
+[workspace.lints.clippy]
+all = { level = "deny", priority = -1 }
+pedantic = { level = "deny", priority = -1 }
+format_push_string = "deny"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+
+[profile.release]
+codegen-units = 1
+lto = "fat"
+opt-level = 3
+panic = "abort"
+strip = "symbols"
+
+[profile.quick]
+inherits = "release"
+codegen-units = 16
+lto = "off"
+panic = "unwind"
+strip = "none"

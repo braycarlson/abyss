@@ -1,0 +1,20 @@
+[package]
+name = "abyss"
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+abyss-aggregate.workspace = true
+abyss-collect.workspace = true
+abyss-core.workspace = true
+abyss-static.workspace = true
+abyss-store.workspace = true
+anyhow.workspace = true
+dotenvy.workspace = true
+rift.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,11 @@
+[package]
+name = "abyss-aggregate"
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+abyss-core.workspace = true
+abyss-store.workspace = true
+
+[lints]
+workspace = true

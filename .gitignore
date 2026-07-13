@@ -1,0 +1,23 @@
+# Rust / Cargo
+/target
+**/*.rs.bk
+*.pdb
+rustc-ice-*.txt
+
+# Project
+.env
+*.db
+*.db-wal
+*.db-shm
+*.log
+dragon-cache/
+
+# OS
+.DS_Store
+._*
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.stackdump
+*~

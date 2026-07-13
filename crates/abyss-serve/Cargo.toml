@@ -1,0 +1,18 @@
+[package]
+name = "abyss-serve"
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+abyss-api.workspace = true
+abyss-static.workspace = true
+abyss-store.workspace = true
+anyhow.workspace = true
+dotenvy.workspace = true
+rift.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+
+[lints]
+workspace = true

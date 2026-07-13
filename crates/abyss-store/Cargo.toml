@@ -1,0 +1,13 @@
+[package]
+name = "abyss-store"
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+abyss-core.workspace = true
+serde.workspace = true
+sqlx.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true
